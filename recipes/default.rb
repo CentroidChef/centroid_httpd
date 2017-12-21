@@ -8,7 +8,7 @@ package 'httpd' do
 end
 
 file '/var/www/html/index.html' do
-  content '<h1>Welcome Home</h1>'
+  content '<h1>Welcome Home! This is a test of the Chef HTTPD Cookbook.</h1>'
 end
 
 service 'httpd' do
