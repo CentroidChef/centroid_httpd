@@ -3,7 +3,9 @@
 # Recipe:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
-package node['httpd']['package_name']
+package 'httpd' do
+  :install
+end
 
 file '/var/www/html/index.html' do
   content '<h1>Welcome Home</h1>'
