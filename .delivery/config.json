@@ -9,7 +9,14 @@
       "enable_cookstyle": true
     }
   },
-  "skip_phases": [],
+  "skip_phases": [
+    "quality",
+    "security",
+    "provision",
+    "deploy",
+    "smoke",
+    "functional"
+  ],
   "job_dispatch": {
     "version": "v2"
   },
