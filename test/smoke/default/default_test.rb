@@ -5,14 +5,22 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
-  end
+# Verify SELinux config file set to "permissive"
+describe file('/etc/selinux/config') do
+  its('content') { should match /SELINUX=permissive/ }
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+# Verify SELinux is current set to "permissive"
+describe command('getenforce') do
+  its('stdout') { should match /Permissive/ }
+end
+
+# Verify httpd package was installed
+describe package('httpd') do
+  it { should be_installed }
+end
+
+# Port 80 for Apache should be listening
+describe port(80) do
+  it { should be_listening }
 end
