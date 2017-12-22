@@ -17,8 +17,8 @@ template '/etc/selinux/config' do
 end
 
 # Setup a simple welcome web page
-file '/var/www/html/index.html' do
-  content '<h1>Welcome Home! This is a test of the Chef HTTPD Cookbook.</h1>'
+template '/var/www/html/index.html' do
+  source 'index_html.erb'
 end
 
 # Start and enable Apache
