@@ -7,5 +7,3 @@ It will install Apache (httpd), update SELinux to "permissive", setup firewall
 rules and setup a default web page (index.html).
 
 It was tested with OEL Linux 7 only.
-
-(Internal Centroid Use Only)
